@@ -2,37 +2,47 @@ package basics;
 
 import java.util.Scanner;
 
+/**
+ * Reverses a number using two different approaches:
+ * 1. Mathematical logic
+ * 2. StringBuffer reverse method
+ */
 public class ReverseNumber {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Input number: ");
 
+        Scanner scanner = new Scanner(System.in);
+
+        // ----------- Method 1: Using mathematical logic -----------
+
+        System.out.println("Input number: ");
         int number = scanner.nextInt();
 
-        //Using Algorithm
+        int reversedNumber = 0;
 
-        int rev = 0;
-        while (number !=0){
-            rev = rev * 10 + number%10;
-            number = number/10;
+        // Loop runs until the number becomes 0
+        while (number != 0) {
+            // Get last digit and add it to reversed number
+            reversedNumber = reversedNumber * 10 + number % 10;
 
+            // Remove last digit from the original number
+            number = number / 10;
         }
-        System.out.println(rev);
+
+        System.out.println("Reversed number (logic): " + reversedNumber);
 
         System.out.println();
         System.out.println();
 
-        //Using String buffer
+        // ----------- Method 2: Using StringBuffer -----------
 
         System.out.println("Input number: ");
         int number2 = scanner.nextInt();
 
-        StringBuffer revBuff;
-
+        // Convert number to StringBuffer and reverse it
         StringBuffer sb = new StringBuffer(String.valueOf(number2));
-        revBuff = sb.reverse();
+        StringBuffer reversedBuffer = sb.reverse();
 
-        System.out.println(revBuff);
+        System.out.println("Reversed number (StringBuffer): " + reversedBuffer);
     }
 }

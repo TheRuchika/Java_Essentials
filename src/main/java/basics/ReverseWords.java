@@ -1,18 +1,31 @@
 package basics;
 
+/**
+ * Reverses the order of words in a given sentence.
+ *
+ * Example:
+ * Input  : "Java Essentials Reverse Words"
+ * Output : "Words Reverse Essentials Java"
+ */
 public class ReverseWords {
+
     public static void main(String[] args) {
-        String word = "Java Essentials Reverse Words";
-        String rev = "";
 
-        String[] splitword = word.split(" ");
-        int count = splitword.length;
+        String sentence = "Java Essentials Reverse Words";
+        String reversedSentence = "";
 
-        System.out.println(count);
+        // Split the sentence into words using space
+        String[] words = sentence.split(" ");
 
-        for (int i = splitword.length-1; i>=0; i--){
-            rev = rev + splitword[i] + " ";
+        // Print number of words (optional)
+        System.out.println("Word count: " + words.length);
+
+        // Loop from last word to first word
+        for (int i = words.length - 1; i >= 0; i--) {
+            reversedSentence = reversedSentence + words[i] + " ";
         }
-        System.out.println(rev);
+
+        // Print the reversed sentence
+        System.out.println("Reversed words: " + reversedSentence);
     }
 }
